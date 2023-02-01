@@ -35,7 +35,7 @@ df = pd.read_json('/kaggle/working/TweetCrawler/raw_data/democrat/democrat_{}.js
                                                                                         'replyCount', 
                                                                                         'retweetCount', 
                                                                                         'likeCount']]
-df['key'] = keyword
+df['key'] = sys.argv[2]
 frames.append(df)
 tweets_df = pd.concat(frames, ignore_index=True)
 final = pd.concat([tweets_df, info_df], axis=1)
