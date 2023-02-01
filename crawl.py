@@ -14,9 +14,9 @@ if not os.path.exists(path):
 
 
 ### Scraping by Using snscrape's CLI command ###
-tweet_count = int(1e7)      # no bounded
+tweet_count = int(1)      # no bounded
 since_date = "2022-10-01"   
-until_date = "2022-12-31"
+until_date = "2022-11-09"
 
 for search_words in keywords:
     print("Starting process to scrape tweets containing " + search_words + " ...")
