@@ -14,7 +14,7 @@ if not os.path.exists(path):
 
 
 ### Scraping by Using snscrape's CLI command ###
-tweet_count = int(1)      # no bounded
+tweet_count = int(1e7)      # no bounded
 since_date = "2022-10-01"   
 until_date = "2022-11-09"
 

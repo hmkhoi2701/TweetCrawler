@@ -23,7 +23,7 @@ for search_words in keywords:
             row[key] = [row[key]]
         rows.append(pd.DataFrame.from_dict(row))
     all_info.append(pd.concat(rows))
-info_df = pd.concat(all_info, ignore_index=True)[['username', 'location']]
+info_df = pd.concat(all_info, ignore_index=True)[['id', 'location']]
 
 
 ### Combine all content of tweets and necessary features ###
