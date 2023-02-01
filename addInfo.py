@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import sys
 
-keyword = sys.argv[1]
+keyword = sys.argv[1] + ' ' + sys.argv[2]
 
 path = "/kaggle/working/TweetCrawler/data"
 # Check whether the path exists or not
