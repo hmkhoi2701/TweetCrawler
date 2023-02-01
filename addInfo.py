@@ -40,4 +40,4 @@ frames.append(df)
 tweets_df = pd.concat(frames, ignore_index=True)
 final = pd.concat([tweets_df, info_df], axis=1)
 final['subject'] = 'Democrat'
-final.to_csv('/kaggle/working/K_crawl_democrat.csv')
+final.to_csv(f'/kaggle/working/K_crawl_democrat_{sys.argv[1]}_{sys.argv[2]}.csv')
