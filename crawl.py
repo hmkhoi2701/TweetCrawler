@@ -1,25 +1,21 @@
 from ast import keyword
 import os
 import pandas as pd
+import sys
 
-
-with open('/kaggle/working/TweetCrawler/keyword/democrat.txt') as file:
-    keywords = [line.rstrip() for line in file]
-print(keywords)
+keyword = sys.argv[1]
+print(keyword)
 
 path = "/kaggle/working/TweetCrawler/raw_data/democrat"
 # Check whether the path exists or not
 if not os.path.exists(path):
    os.makedirs(path)
 
-
-### Scraping by Using snscrape's CLI command ###
-tweet_count = int(1e7)      # no bounded
+tweet_count = int(1e7)
 since_date = "2022-10-01"   
 until_date = "2022-11-09"
 
-for search_words in keywords:
-    print("Starting process to scrape tweets containing " + search_words + " ...")
-    filename = search_words.replace(' ', '')
-    os.system('snscrape --jsonl --max-results {} --since {} twitter-search "{} until:{}"> /kaggle/working/TweetCrawler/raw_data/democrat/democrat_{}.json'.format(tweet_count, since_date, search_words, until_date, filename))
-    print("Scraping tweets containing " + search_words + ": DONE")
+print("Starting process to scrape tweets containing " + keyword + " ...")
+filename = keyword.replace(' ', '')
+os.system('snscrape --jsonl --max-results {} --since {} twitter-search "{} until:{}"> /kaggle/working/TweetCrawler/raw_data/democrat/democrat_{}.json'.format(tweet_count, since_date, keyword, until_date, filename))
+print("Scraping tweets containing " + keyword + ": DONE")
