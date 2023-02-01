@@ -1,9 +1,8 @@
-from ast import keyword
 import os
 import pandas as pd
 import sys
 
-keyword = sys.argv[1]
+keyword = sys.argv[1] + ' ' + sys.argv[2]
 print(keyword)
 
 path = "/kaggle/working/TweetCrawler/raw_data/democrat"
