@@ -10,8 +10,8 @@ if not os.path.exists(path):
    os.makedirs(path)
 
 tweet_count = int(1e7)
-since_date = "2022-10-01"   
-until_date = "2022-11-09"
+since_date = sys.argv[3]   
+until_date = sys.argv[4] #"2022-11-09"
 
 print("Starting process to scrape tweets containing " + keyword + " ...")
 filename = keyword.replace(' ', '')
